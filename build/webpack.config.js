@@ -20,7 +20,7 @@ module.exports = {
   },
   devServer: {
     hot: true,
-    port: 3000,
+    port: 9999,
     contentBase: './dist'
   },
   resolve: {
@@ -68,29 +68,6 @@ module.exports = {
           }
         ]
       },
-      // {
-      //   test: /\.(sass|scss)$/,
-      //   use: [
-      //     {
-      //       loader: 'style-loader'
-      //     },
-      //     {
-      //       loader: 'css-loader',
-      //       options: {
-      //         importLoaders: 2
-      //       }
-      //     },
-      //     {
-      //       loader: 'sass-loader',
-      //       options: {
-      //         implementation: require('dart-sass')
-      //       }
-      //     },
-      //     {
-      //       loader: 'postcss-loader'
-      //     }
-      //   ]
-      // },
       {
         test: /\.(jpe?g|png|gif)$/i,
         use: [

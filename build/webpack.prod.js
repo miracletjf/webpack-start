@@ -4,8 +4,9 @@ const webpack = require('webpack')
 const webpackConfig = require('./webpack.config')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssnanoPlugin = require('@intervolga/optimize-cssnano-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = merge(webpackConfig, {
   mode: 'production',
@@ -21,7 +22,7 @@ module.exports = merge(webpackConfig, {
         },
         common: {
           name: 'chunk-common',
-          miniChunks: 2,
+          minChunks: 2,
           priority: -20,
           chunks: 'initial',
           reuseExistingChunk: true
@@ -59,7 +60,7 @@ module.exports = merge(webpackConfig, {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: 'production'
+        NODE_ENV: JSON.stringify('production')
       }
     }),
     new MiniCssExtractPlugin({
@@ -84,6 +85,10 @@ module.exports = merge(webpackConfig, {
         to: path.resolve(__dirname, '../dist')
       }
     ]),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    // 打包分析
+    // new BundleAnalyzerPlugin({
+    //   analyzerMode: 'static'
+    // })
   ]
 })
