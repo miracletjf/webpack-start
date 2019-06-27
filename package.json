@@ -6,7 +6,7 @@
   "author": "tangjingfu <1398988546@qq.com>",
   "license": "MIT",
   "scripts": {
-    "serve": "webpack-dev-server --config ./build/webpack.dev.js",
+    "serve": "webpack-dev-server --config ./build/webpack.dev.js --open",
     "build": "webpack --config ./build/webpack.prod.js"
   },
   "devDependencies": {

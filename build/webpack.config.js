@@ -14,14 +14,7 @@ module.exports = {
     // 生成的 js 文件名称
     filename: 'js/[name].[hash:8].js',
     // 生成的 chunk 名称
-    chunkFilename: 'js/[name].[hash:8].js',
-    // 资源引用的路径
-    publicPath: './'
-  },
-  devServer: {
-    hot: true,
-    port: 9999,
-    contentBase: './dist'
+    chunkFilename: 'js/[name].[hash:8].js'
   },
   resolve: {
     alias: {
@@ -127,6 +120,6 @@ module.exports = {
       template: path.resolve(__dirname,'../public/index.html')
     }),
     new webpack.NamedChunksPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ]
 }

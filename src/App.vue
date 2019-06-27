@@ -3,7 +3,7 @@
     <div class="App">Hello World</div>
     <div class="tabs">
       <router-link to="/Home">Go Home</router-link>
-      <router-link to="/About">Go About</router-link>
+      <router-link to="/About">Goffff About</router-link>
     </div>
     <div>
       <p>{{getCounter}}</p>
